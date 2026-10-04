@@ -1,0 +1,11 @@
+# Personal data and models never go to GitHub
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+config.json
+venv/
+__pycache__/
+*.pyc
+*.db
+.env
