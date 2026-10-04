@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neural</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<aside id="sidebar">
+  <div class="brand"><span class="dot"></span><span id="brandName">Neural</span><small id="version"></small></div>
+  <button id="newChat" class="primary">+ New chat</button>
+  <div id="convList"></div>
+  <div class="voiceBox">
+    <label for="voiceSelect">Voice</label>
+    <select id="voiceSelect"></select>
+    <label for="rate">Speed</label>
+    <input id="rate" type="range" min="0.7" max="1.5" step="0.05" value="1">
+  </div>
+  <button id="openFacts" class="ghost">What I know about you</button>
+</aside>
+
+<main>
+  <div id="banner" hidden></div>
+  <div id="toolbar">
+    <button id="toggleSpeak" class="toggle" type="button">Speak replies: off</button>
+    <button id="toggleConv" class="toggle" type="button">Conversation mode: off</button>
+    <button id="toggleCam" class="toggle" type="button">Camera: off</button>
+    <button id="stopSpeak" class="toggle" type="button" hidden>Stop talking</button>
+    <span id="status"></span>
+  </div>
+  <div id="messages"></div>
+  <div id="attach" hidden><img id="attachImg" alt="attached snapshot"><button id="attachClear" type="button" title="Remove photo">x</button></div>
+  <form id="composer">
+    <button id="micBtn" type="button" title="Talk to Neural">Mic</button>
+    <textarea id="input" rows="1" placeholder="Message Neural...  (try /remember I love hiking)" autofocus></textarea>
+    <button id="send" type="submit" class="primary">Send</button>
+  </form>
+</main>
+
+<div id="camPanel" hidden>
+  <video id="camVideo" autoplay muted playsinline></video>
+  <div class="camBtns">
+    <button id="lookBtn" type="button" class="primary">Look at me</button>
+    <button id="snapBtn" type="button">Attach snapshot</button>
+  </div>
+</div>
+
+<div id="factsModal" class="modal" hidden>
+  <div class="card">
+    <h3>What I know about you</h3>
+    <ul id="factsList"></ul>
+    <form id="factForm">
+      <input id="factInput" placeholder="Add a fact...">
+      <button class="primary" type="submit">Add</button>
+    </form>
+    <button id="closeFacts" class="ghost">Close</button>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
